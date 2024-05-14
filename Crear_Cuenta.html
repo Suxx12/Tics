@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cuenta</title>
+    <!-- Incluir Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Incluir Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="Cuenta.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title text-center">Crear Cuenta</h2>
+                        <form action="/register" method="post" onsubmit="return validatePassword()">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="first_name" placeholder="Nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="last_name" placeholder="Apellido" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" name="email" placeholder="Correo Electrónico" required>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña" required>
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-secondary" id="toggle-password" onclick="togglePasswordVisibility()"><i class="far fa-eye"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirmar Contraseña" required>
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-secondary" id="toggle-confirm-password" onclick="toggleConfirmPasswordVisibility()"><i class="far fa-eye"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="error-message" class="text-danger text-center mb-3"></div>
+                            <button type="submit" class="btn btn-primary btn-block"><a href="home.html" class="btn btn-primary btn-block">Crear Cuenta</a></button>
+                        </form>
+                        <div class="text-center mt-3">
+                            <p>¿Ya tienes una cuenta? <a href="Iniciar_sesion.html">Iniciar sesión</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Incluir Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
