@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Iniciar Sesión</title>
+        <!-- Incluir Bootstrap CSS -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Incluir Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="Home.css">
+    </head>
+<body>
+    <header>
+        <div class="header">
+            <h1>Pool Patrol</h1>
+            <p>Bienvenido, Nombre de Usuario</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Parámetro</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Nivel de pH</td>
+                        <td>7.2</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Temperatura del Agua</td>
+                        <td>28°C</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Nivel de Turbidez</td>
+                        <td>Bajo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <button type="button" class="emergency-btn" onclick="callEmergency()">Llamar a Emergencia</button>
+
+</body>
+<script src="scripts.js"></script>
+</html>
