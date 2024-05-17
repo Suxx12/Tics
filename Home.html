@@ -1,56 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Iniciar Sesión</title>
-        <!-- Incluir Bootstrap CSS -->
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-        <!-- Incluir Font Awesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-        <link rel="stylesheet" href="Home.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pool Patrol - Interfaz de Usuario</title>
+    <link rel="stylesheet" href="Home.css">
+</head>
 <body>
     <header>
-        <div class="header">
-            <h1>Pool Patrol</h1>
-            <p>Bienvenido, Nombre de Usuario</p>
-        </div>
+        <h1>Pool Patrol</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#" onclick="toggleSettings()">Ajustes</a></li>
+                <li><a href="#">Ayuda</a></li>
+            </ul>
+        </nav>
     </header>
-
-    <div class="container">
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Parámetro</th>
-                        <th>Valor</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Nivel de pH</td>
-                        <td>7.2</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Temperatura del Agua</td>
-                        <td>28°C</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Nivel de Turbidez</td>
-                        <td>Bajo</td>
-                    </tr>
-                </tbody>
-            </table>
+    <div id="settings-overlay" class="overlay">
+        <div class="settings">
+            <h2>Ajustes</h2>
+            <a href="#" class="close" onclick="toggleSettings()">&times;</a>
+            <ul>
+                <li><a href="#">Opción 1</a></li>
+                <li><a href="#">Opción 2</a></li>
+                <li><a href="#">Opción 3</a></li>
+            </ul>
         </div>
     </div>
-
-    <button type="button" class="emergency-btn" onclick="callEmergency()">Llamar a Emergencia</button>
-
+    <main>
+        <section id="temperatura" class="sensor">
+            <h2>Temperatura del Agua</h2>
+            <p id="temperatura-valor">--</p>
+        </section>
+        <section id="ph" class="sensor">
+            <h2>Nivel de pH</h2>
+            <p id="ph-valor">--</p>
+        </section>
+        <section id="turbidez" class="sensor">
+            <h2>Turbidez del Agua</h2>
+            <p id="turbidez-valor">--</p>
+        </section>
+        <section id="deteccion" class="sensor">
+            <h2>Detección de caídas</h2>
+            <p id="deteccion-estado">--</p>
+        </section>
+        <button id="start-button" onclick="start()">Comenzar monitoreo</button>
+    </main>
+    <footer>
+        <p>&copy; 2024 Pool Patrol</p>
+    </footer>
+    <audio id="emergency-sound" src="alerta.mp3"></audio>
+    <script src="Scripts.js"></script>
 </body>
-<script src="scripts.js"></script>
 </html>

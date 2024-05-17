@@ -1,63 +1,143 @@
-/* home.css */
+/* Reset de estilos */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
 
-/* Estilos para el encabezado */
-.header {
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f7f7;
+}
+
+header {
     background-color: #333;
     color: #fff;
-    padding: 10px;
+    padding: 20px 0;
     text-align: center;
 }
 
-.header h1 {
+header h1 {
+    font-size: 2.5rem;
+}
+
+nav ul {
+    list-style-type: none;
     margin: 0;
+    padding: 0;
 }
 
-.header p {
-    margin: 5px 0;
+nav ul li {
+    display: inline;
 }
 
-/* Estilos para la tabla de información */
-/* CSS adicional para el borde de la tabla */
-table {
-    border: 2px solid black;
-    border-collapse: collapse;
-}
-
-th, td {
-    border: 1px solid black;
-    padding: 8px;
-    text-align: center;
-}
-
-
-.table-container {
-    margin-top: 20px;
-}
-
-.table-container table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.table-container th, .table-container td {
-    border: 1px solid #ccc;
-    padding: 8px;
-    text-align: center;
-}
-
-.table-container th {
-    background-color: #f2f2f2;
-}
-
-/* Estilos para el botón de llamada a emergencia */
-.emergency-btn {
-    position: fixed; /* Fija el botón en la ventana del navegador */
-    bottom: 20px; /* Alinea el botón 20px desde el borde inferior */
-    right: 20px; /* Alinea el botón 20px desde el borde derecho */
-    padding: 10px 20px;
-    background-color: #dc3545; /* Color rojo */
+nav ul li a {
     color: #fff;
-    border: none; /* Elimina el borde */
-    border-radius: 5px; 
-    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    text-decoration: none;
+    padding: 10px;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.sensor {
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.sensor h2 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.sensor p {
+    color: #777;
+    font-size: 1.2rem;
+}
+
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Estilos para el menú de ajustes */
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.settings {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.settings h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.settings ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.settings ul li {
+    margin-bottom: 10px;
+}
+
+.settings ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: #aaa;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #333;
 }
