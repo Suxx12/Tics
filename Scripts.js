@@ -1,55 +1,24 @@
-function callEmergency() {
-    // Llama al número de emergencias
-    window.location.href = "tel:911";
+var x = document.getElementById("login");
+var y = document.getElementById("registrar");
+var z = document.getElementById("elegir");
+
+function redirectToHome() {
+    window.location.href = "home.html";
 }
 
-        function validatePassword() {
-            var password = document.getElementById("password").value;
-            var confirmPassword = document.getElementById("confirm_password").value;
-            var errorMessage = document.getElementById("error-message");
+function login() {
+    x.style.left = "50px";
+    y.style.left = "450px";
+    z.style.left = "0px";
+}
 
-            // Validación de coincidencia de contraseñas
-            if (password != confirmPassword) {
-                errorMessage.textContent = "Las contraseñas no coinciden.";
-                return false;
-            }
+function registrar() {
+    x.style.left = "-400px";
+    y.style.left = "50px";
+    z.style.left = "120px";
+}
 
-            // Validación de longitud y números en la contraseña
-            var passwordPattern = /^(?=.*\d).{6,}$/;
-            if (!passwordPattern.test(password)) {
-                errorMessage.textContent = "La contraseña debe tener al menos 6 caracteres y contener al menos un número.";
-                return false;
-            }
-
-            errorMessage.textContent = "";
-            return true;
-        }
-
-        function togglePasswordVisibility() {
-            var passwordField = document.getElementById("password");
-            var toggleButton = document.getElementById("toggle-password");
-            if (passwordField.type === "password") {
-                passwordField.type = "text";
-                toggleButton.innerHTML = '<i class="far fa-eye-slash"></i>';
-            } else {
-                passwordField.type = "password";
-                toggleButton.innerHTML = '<i class="far fa-eye"></i>';
-            }
-        }
-
-        function toggleConfirmPasswordVisibility() {
-            var confirmPasswordField = document.getElementById("confirm_password");
-            var toggleButton = document.getElementById("toggle-confirm-password");
-            if (confirmPasswordField.type === "password") {
-                confirmPasswordField.type = "text";
-                toggleButton.innerHTML = '<i class="far fa-eye-slash"></i>';
-            } else {
-                confirmPasswordField.type = "password";
-                toggleButton.innerHTML = '<i class="far fa-eye"></i>';
-            }
-        }
-        
-    // Inicialización de los valores de los sensores
+// Inicialización de los valores de los sensores
 let valoresSensores = {
     temperatura: 0,
     ph: 0,

@@ -1,23 +1,28 @@
 /* Reset de estilos */
-body, h1, h2, p, ul, li {
+body, h1, h2, p, ul, li, html{
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f7f7f7;
+    color: #f4f4f4; /* Texto blanco */
+    background-image:url('pngtree-free-blue-water-wallpaper-for-your-desktop-image_13349874.jpg'); /* Imagen de fondo */
+    background-position: center;
+    background-size: cover;
+    height: 100%; /* Para que el footer se quede al final */
 }
 
 header {
-    background-color: #333;
+    background-color: #003366; /* Azul oscuro */
     color: #fff;
     padding: 20px 0;
     text-align: center;
 }
 
 header h1 {
-    font-size: 2.5rem;
+    font-size: 4.5rem;
 }
 
 nav ul {
@@ -31,40 +36,45 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #ffffff; /* Azul piscina */
     text-decoration: none;
     padding: 10px;
 }
 
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
 main {
     max-width: 800px;
-    margin: 20px auto;
+    margin: 80px auto;
     text-align: center;
+    
 }
 
 .sensor {
-    background-color: #fff;
-    border: 2px solid #ddd;
+    background-color: #fffefe; /* Fondo oscuro */
+    border: 2px solid #000000; /* Borde azul piscina */
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
 }
 
 .sensor h2 {
-    color: #333;
+    color: #000000; /* Azul piscina */
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
 .sensor p {
-    color: #777;
+    color: #777; /* Texto gris */
     font-size: 1.2rem;
 }
 
 button {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
+    background-color: #ffffff; 
+    color: #000; /* Texto negro */
+    border-color: #000;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -76,14 +86,17 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #009ACD; /* Azul más oscuro al hover */
 }
 
 footer {
-    background-color: #333;
+    position: fixed; /* Fija el pie de página */
+    bottom: 0;
+    width: 100%; /* Ancho completo */
+    background-color: #003366; /* Azul oscuro */
     color: #fff;
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 0;
 }
 
 /* Estilos para el menú de ajustes */
@@ -103,13 +116,14 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
+    background-color: #1a1a1a; /* Fondo oscuro */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .settings h2 {
+    color: #00BFFF; /* Azul piscina */
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
@@ -124,8 +138,12 @@ footer {
 }
 
 .settings ul li a {
-    color: #333;
+    color: #00BFFF; /* Azul piscina */
     text-decoration: none;
+}
+
+.settings ul li a:hover {
+    text-decoration: underline;
 }
 
 .close {
@@ -139,5 +157,5 @@ footer {
 }
 
 .close:hover {
-    color: #333;
+    color: #00BFFF; /* Azul piscina */
 }
