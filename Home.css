@@ -8,7 +8,7 @@ body, h1, h2, p, ul, li, html{
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #f4f4f4; /* Texto blanco */
-    background-image:url('pngtree-free-blue-water-wallpaper-for-your-desktop-image_13349874.jpg'); /* Imagen de fondo */
+    background-image:url('agua1.jpg'); /* Imagen de fondo */
     background-position: center;
     background-size: cover;
     height: 100%; /* Para que el footer se quede al final */
