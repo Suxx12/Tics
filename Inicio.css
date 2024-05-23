@@ -1,3 +1,4 @@
+/* Reset de estilos */
 * {
     margin: 0;
     padding: 0;
@@ -5,8 +6,13 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
 .container {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     background-image: linear-gradient(
         rgba(0, 0, 0, 0.5),
@@ -21,14 +27,18 @@
 
 .form-box {
     width: 370px;
+    max-width: 90%;
     height: 500px;
+    max-height: 90vh;
     position: relative;
     background: #ffffff;
     padding: 5px;
     border-radius: 10px;
-    overflow: hidden;
+    overflow-y: auto; /* Hace que el formulario sea desplazable verticalmente */
+    overflow-x: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
+
 
 .button-box {
     width: 240px;
@@ -104,4 +114,53 @@
 
 #registrar {
     left: 450px;
+}
+
+
+
+/* Media Query para achicar el contenido si la altura es menor a 500px */
+@media (max-height: 500px) {
+    .form-box {
+        width: 320px;
+        height: 400px;
+    }
+
+    .button-box {
+        width: 200px;
+        margin: 20px auto;
+    }
+
+    .toggle-btn {
+        padding: 8px 18px;
+    }
+
+    .input-group {
+        width: 240px;
+    }
+
+    .input-field {
+        padding: 8px 0;
+        margin: 3px 0;
+    }
+
+    .submit-btn {
+        width: 75%;
+        padding: 8px 20px;
+    }
+
+    .check-box {
+        margin: 20px 10px 20px 0;
+    }
+
+    .span {
+        font-size: 10px;
+    }
+
+    #login {
+        left: 40px;
+    }
+
+    #registrar {
+        left: 380px;
+    }
 }

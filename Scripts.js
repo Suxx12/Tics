@@ -2,6 +2,17 @@ var x = document.getElementById("login");
 var y = document.getElementById("registrar");
 var z = document.getElementById("elegir");
 
+function validateLogin() {
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    
+    if (email.trim() === "" || password.trim() === "") {
+        alert("Por favor, complete todos los campos.");
+    } else {
+        redirectToHome();
+    }
+}
+
 function redirectToHome() {
     window.location.href = "home.html";
 }
@@ -15,7 +26,11 @@ function login() {
 function registrar() {
     x.style.left = "-400px";
     y.style.left = "50px";
-    z.style.left = "120px";
+    if (window.innerHeight < 300) {
+        z.style.left = "110px"; // Si la pantalla es menor a 300px, establece el left en 100px
+    } else {
+        z.style.left = "120px";
+    }
 }
 
 // Inicialización de los valores de los sensores

@@ -56,7 +56,7 @@ main {
     background-color: #fffefe; /* Fondo oscuro */
     border: 2px solid #000000; /* Borde azul piscina */
     border-radius: 10px;
-    padding: 20px;
+    padding: 5px;
     margin-bottom: 20px;
 }
 
@@ -83,6 +83,7 @@ button {
     margin-top: 20px;
     cursor: pointer;
     border-radius: 5px;
+    position: relative;
 }
 
 button:hover {
@@ -158,4 +159,89 @@ footer {
 
 .close:hover {
     color: #00BFFF; /* Azul piscina */
+}
+
+/* Media Queries para pantallas más pequeñas */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    button {
+        padding: 0px 0px;
+        font-size: 18px;
+    }
+
+    .sensor h2 {
+        font-size: 1.2rem;
+    }
+
+    .sensor p {
+        font-size: 1rem;
+    }
+}
+
+/* Media Query para achicar el footer si la altura es menor a 800px */
+@media (max-height: 800px) {
+    footer {
+        padding: 10px 0;
+        font-size: 0.8rem; /* Texto más pequeño */
+    }
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 18px;
+    }
+
+    .sensor h2 {
+        font-size: 1.2rem;
+    }
+
+    .sensor p {
+        font-size: 1rem;
+    }
+    main{
+        margin: 20px auto;
+    }
+}
+
+/* Media Query para achicar aún más el contenido si la altura es menor a 600px */
+@media (max-height: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    .sensor h2 {
+        font-size: 1rem;
+    }
+
+    .sensor p {
+        font-size: 0.8rem;
+    }
+
+    main {
+        margin: 10px auto;
+    }
+
+    footer {
+        padding: 5px 0;
+        font-size: 0.8rem; /* Texto más pequeño */
+    }
+    .sensor{
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-height: 450px) {
+    footer{
+        display: none;
+    }
 }
