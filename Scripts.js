@@ -24,7 +24,8 @@ var z = document.getElementById("elegir");
 
 function validateLogin() {
     var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
+    var password = document.getElementById("loginPassword").value;
+    var rememberPassword = document.getElementById("rememberPasswordCheckbox").checked;
     
     var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     
@@ -33,6 +34,10 @@ function validateLogin() {
     } else if (!emailPattern.test(email)) {
         alert("Por favor, ingrese un correo electrónico válido.");
     } else {
+        if (rememberPassword) {
+            // Aquí podrías implementar la lógica para recordar la contraseña
+            alert("Contraseña recordada.");
+        }
         redirectToHome();
     }
 }
