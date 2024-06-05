@@ -16,18 +16,18 @@
             </div>
             <form id="login" class="input-group">
                 <input id="email" type="email" class="input-field" placeholder="Ingrese su correo" required>
-                <input id="password" type="password" class="input-field" placeholder="Contraseña" required>
+                <input id="loginPassword" type="password" class="input-field" placeholder="Contraseña" required>
                 <input type="checkbox" class="check-box"><span>Recordar contraseña</span>
                 <button type="button" class="submit-btn" onclick="validateLogin()">Acceder</button>
             </form>
             <form id="registrar" class="input-group">
                 <input type="text" class="input-field" placeholder="Nombre de usuario" required>
                 <input type="email" class="input-field" placeholder="Correo" required>
-                <input type="password" class="input-field" placeholder="Contraseña" required>
-                <input type="password" class="input-field" placeholder="Confirme la Contraseña" required>
-                <input type="checkbox" class="check-box"><span>Acepto los términos y condiciones</span>
-                <button type="submit" class="submit-btn">Registrar</button>
-            </form>
+                <input type="password" id="registerPassword" class="input-field" placeholder="Contraseña" required>
+                <input type="password" id="confirmPassword" class="input-field" placeholder="Confirmar Contraseña" required>
+                <input type="checkbox" id="terms" class="check-box"><span>Acepto los <a href="terminos.html" target="_blank">términos y condiciones</a></span>
+                <button type="button" class="submit-btn" onclick="validateRegister()">Registrar</button>
+            </form>            
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
