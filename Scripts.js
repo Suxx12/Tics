@@ -26,9 +26,9 @@ function validateLogin() {
     var email = document.getElementById("email").value;
     var password = document.getElementById("loginPassword").value;
     var rememberPassword = document.getElementById("rememberPasswordCheckbox").checked;
-    
+
     var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    
+
     if (email.trim() === "" || password.trim() === "") {
         alert("Por favor, complete todos los campos.");
     } else if (!emailPattern.test(email)) {
@@ -67,13 +67,13 @@ function validateRegister() {
     var email = document.querySelector("#registrar input[type='email']").value;
     var password = document.getElementById("registerPassword").value;
     var confirmPassword = document.getElementById("confirmPassword").value;
-    
+
     console.log("Password:", password);
     console.log("Confirm Password:", confirmPassword);
-    
+
     var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     var hasNumber = /\d/;
-    
+
     if (!checkBox) {
         alert("Debe aceptar los términos y condiciones.");
     } else if (!emailPattern.test(email)) {
@@ -95,3 +95,12 @@ function toggleSettings() {
     overlay.style.display = (overlay.style.display == "block") ? "none" : "block";
 }
 
+function showInfo() {
+    var infoOverlay = document.getElementById('info-overlay');
+    infoOverlay.style.display = 'block';
+}
+
+function hideInfo() {
+    var infoOverlay = document.getElementById('info-overlay');
+    infoOverlay.style.display = 'none';
+}

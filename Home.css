@@ -1,5 +1,4 @@
-/* Reset de estilos */
-body, h1, h2, p, ul, li, html{
+body, h1, h2, p, ul, li, html {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -7,8 +6,8 @@ body, h1, h2, p, ul, li, html{
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #f4f4f4; /* Texto blanco */
-    background-image:url('agua1.jpg'); /* Imagen de fondo */
+    color: #000000; /* Texto negro */
+    background-image: url('agua1.jpg'); /* Imagen de fondo */
     background-position: center;
     background-size: cover;
     height: 100%; /* Para que el footer se quede al final */
@@ -36,7 +35,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #ffffff; /* Azul piscina */
+    color: #ffffff; /* Texto blanco */
     text-decoration: none;
     padding: 10px;
 }
@@ -49,32 +48,31 @@ main {
     max-width: 800px;
     margin: 80px auto;
     text-align: center;
-    
 }
 
 .sensor {
-    background-color: #fffefe; /* Fondo oscuro */
-    border: 2px solid #000000; /* Borde azul piscina */
+    background-color: #fffefe; /* Fondo blanco */
+    border: 2px solid #000000; /* Borde negro */
     border-radius: 10px;
     padding: 5px;
     margin-bottom: 20px;
 }
 
 .sensor h2 {
-    color: #000000; /* Azul piscina */
+    color: #000000; /* Texto negro */
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
 .sensor p {
-    color: #777; /* Texto gris */
+    color: #000000; /* Texto negro */
     font-size: 1.2rem;
 }
 
 button {
-    background-color: #ffffff; 
+    background-color: #ffffff; /* Fondo blanco */
     color: #000; /* Texto negro */
-    border-color: #000;
+    border-color: #000; /* Borde negro */
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -110,13 +108,11 @@ footer {
     left: 0;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1000;
+    justify-content: center;
+    align-items: center;
 }
 
 .settings {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background-color: #1a1a1a; /* Fondo oscuro */
     padding: 20px;
     border-radius: 10px;
@@ -124,7 +120,7 @@ footer {
 }
 
 .settings h2 {
-    color: #00BFFF; /* Azul piscina */
+    color: #00BFFF; /* Azul claro */
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
@@ -139,7 +135,7 @@ footer {
 }
 
 .settings ul li a {
-    color: #00BFFF; /* Azul piscina */
+    color: #00BFFF; /* Azul claro */
     text-decoration: none;
 }
 
@@ -157,8 +153,35 @@ footer {
     cursor: pointer;
 }
 
+.info-content {
+    max-width: 80%; /* Establece el ancho máximo de la ventana emergente */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    margin: auto;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.info-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    text-decoration: none;
+    color: #00BFFF; /* Azul claro */
+}
+
 .close:hover {
-    color: #00BFFF; /* Azul piscina */
+    color: #f00;
 }
 
 /* Media Queries para pantallas más pequeñas */
@@ -203,7 +226,7 @@ footer {
     .sensor p {
         font-size: 1rem;
     }
-    main{
+    main {
         margin: 20px auto;
     }
 }
@@ -235,13 +258,120 @@ footer {
         padding: 5px 0;
         font-size: 0.8rem; /* Texto más pequeño */
     }
-    .sensor{
+    .sensor {
         margin-bottom: 5px;
-    }
+   }
 }
 
 @media (max-height: 450px) {
-    footer{
+    footer {
         display: none;
     }
+}
+
+@media (max-width: 1000px), (max-height: 1000px) {
+    .card .contenido p {
+        font-size: 0.8em; /* Reducir el tamaño de la fuente del párrafo */
+    }
+    
+    .card .contenido h3 {
+        font-size: 1em; /* Reducir el tamaño de la fuente del título */
+    }
+    
+    .card .contenido a {
+        padding: 8px; /* Reducir el padding de los enlaces */
+    }
+}
+
+@media (max-width: 768px), (max-height: 768px) {
+    .info-content {
+        max-width: 90%;
+    }
+    .card .titulo h2 {
+        font-size: 1rem; /* Reducir el tamaño de la fuente del título */
+        margin-bottom: 0; /* Eliminar el margen inferior del título si es necesario */
+    }
+    
+    .card{
+        margin: 10px;
+    }
+    .card .contenido p {
+        font-size: 0.7em; /* Reducir aún más el tamaño de la fuente del párrafo */
+    }
+    
+    .card .contenido h3 {
+        font-size: 0.9em; /* Reducir aún más el tamaño de la fuente del título */
+    }
+    
+    .card .contenido a {
+        padding: 6px; /* Reducir aún más el padding de los enlaces */
+    }
+}
+@media (max-width: 375px), (max-height: 667px) {
+    .info-content {
+        max-width: 100%;
+    }
+    .card .titulo h2 {
+        font-size: 1rem; /* Reducir el tamaño de la fuente del título */
+        margin-bottom: 0; /* Eliminar el margen inferior del título si es necesario */
+    }
+    
+    .card{
+        margin: 5px;
+    }
+    .card .contenido p {
+        font-size: 0.6em; /* Reducir aún más el tamaño de la fuente del párrafo */
+    }
+    
+    .card .contenido h3 {
+        font-size: 0.8em; /* Reducir aún más el tamaño de la fuente del título */
+    }
+    
+    .card .contenido a {
+        padding: 4px; /* Reducir aún más el padding de los enlaces */
+    }
+}
+
+.card {
+    width: 100%;
+    margin: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.12);
+    cursor: default;
+    transition: all 400ms ease;
+}
+
+.card:hover {
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3%);
+}
+
+.card .contenido {
+    padding: 10px;
+    text-align: justify;
+    flex-grow: 1;
+}
+
+.card .contenido p {
+    max-width: 100%; /* Establece el ancho máximo */
+    word-wrap: break-word; /* Hace que las palabras largas se rompan y hagan un salto de línea */
+    line-height: 1.5;
+    color: #6a6a6a;
+}
+
+.card .contenido h3 {
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.card .contenido a {
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.card .titulo {
+    padding: 5px;
 }
