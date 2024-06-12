@@ -1,26 +1,57 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-    const socket = io('http://localhost:3000');
+    const socket = io('http://34.196.28.143:3000');
 
-    socket.on('nuevosDatos', (datos) => {
+    socket1.on('datosSensor', (datos) => {
+        console.log('Conexión establecida con el servidor');
+        // Actualizar los valores en el HTML
         document.getElementById('temperatura-valor').innerText = datos.temperatura + ' °C';
         document.getElementById('ph-valor').innerText = datos.ph;
-        document.getElementById('turbidez-valor').innerText = datos.turbidez + ' V';
+        document.getElementById('turbidez-valor').innerText = datos.turbidez + ' NTU';
         document.getElementById('deteccion-estado').innerText = datos.caida;
     });
+
+    const infoLink = document.getElementById('info-link');
+    if (infoLink) {
+        infoLink.addEventListener('click', showInfo);
+    }
 });
 
+function showInfo() {
+    let overlay = document.getElementById('info-overlay');
+    overlay.style.display = 'block';
+}
+
+function hideInfo() {
+    let overlay = document.getElementById('info-overlay');
+    overlay.style.display = 'none';
+}
+
 function toggleSettings() {
-    const overlay = document.getElementById('settings-overlay');
-    overlay.style.display = overlay.style.display === 'none' ? 'block' : 'none';
+    let overlay = document.getElementById('settings-overlay');
+    overlay.style.display = (overlay.style.display == "block") ? "none" : "block";
 }
 
 function start() {
     console.log("Monitoreo iniciado");
 }
 
-var x = document.getElementById("login");
-var y = document.getElementById("registrar");
-var z = document.getElementById("elegir");
+function login() {
+    x.style.left = "50px";
+    y.style.left = "450px";
+    z.style.left = "0px";
+    console.log("Inicio de sesión realizado");
+}
+
+function registrar() {
+    x.style.left = "-400px";
+    y.style.left = "50px";
+    if (window.innerHeight < 300) {
+        z.style.left = "110px"; // Si la pantalla es menor a 300px, establece el left en 110px
+    } else {
+        z.style.left = "120px";
+    }
+    console.log("Registro realizado");
+}
 
 function validateLogin() {
     var email = document.getElementById("email").value;
@@ -39,26 +70,6 @@ function validateLogin() {
             alert("Contraseña recordada.");
         }
         redirectToHome();
-    }
-}
-
-function redirectToHome() {
-    window.location.href = "Home.html";
-}
-
-function login() {
-    x.style.left = "50px";
-    y.style.left = "450px";
-    z.style.left = "0px";
-}
-
-function registrar() {
-    x.style.left = "-400px";
-    y.style.left = "50px";
-    if (window.innerHeight < 300) {
-        z.style.left = "110px"; // Si la pantalla es menor a 300px, establece el left en 110px
-    } else {
-        z.style.left = "120px";
     }
 }
 
@@ -89,18 +100,11 @@ function validateRegister() {
     }
 }
 
-// Función para mostrar u ocultar el menú de ajustes
-function toggleSettings() {
-    let overlay = document.getElementById('settings-overlay');
-    overlay.style.display = (overlay.style.display == "block") ? "none" : "block";
+function redirectToHome() {
+    window.location.href = "Home.html";
 }
 
-function showInfo() {
-    var infoOverlay = document.getElementById('info-overlay');
-    infoOverlay.style.display = 'block';
-}
-
-function hideInfo() {
-    var infoOverlay = document.getElementById('info-overlay');
-    infoOverlay.style.display = 'none';
-}
+// Variables para el manejo de formularios
+var x = document.getElementById("login");
+var y = document.getElementById("registrar");
+var z = document.getElementById("elegir");
